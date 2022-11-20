@@ -1,0 +1,290 @@
+*{
+margin:0;
+padding:0;
+}
+
+body{
+font-family: 'Montserrat' , sans-serif;
+overflow-x: hidden;
+background-color:lightgrey;
+}
+
+/* navbar */
+nav{
+display:flex;
+background-color:black;
+justify-content:space-around;
+padding:20px 0;
+color:violet;
+height:50px;
+align-items:center;
+opacity:0.8;
+font-weight:bold;
+font-size:20px;
+}
+nav .logo{
+font-family: 'Pacifico', cursive;
+letter-spacing:3px;
+}
+ b{
+font-family:'Montserrat', sans-serif;
+font-size:10px;
+color:ghostwhite;
+}
+
+nav ul {
+display:flex;
+list-style:none;
+width:40%;
+justify-content:space-between;
+}
+
+nav ul li a{
+display:inline-block;
+color:gold;
+text-decoration:none;
+font-size:0.8em;
+}
+nav ul li a:hover{
+color:white;
+}
+
+/* hamburger menu*/
+.menu-toggle {
+display:none;
+flex-direction:column;
+height:20px;
+justify-content:space-between;
+position:relative;
+z-index:999;
+}
+.menu-toggle input{
+position:absolute;
+width:40px;
+height:28px;
+left:-5px;
+top:-3px;
+opacity:0;
+cursor:pointer;
+z-index:2;
+} 
+
+.menu-toggle span{
+display:block;
+width:28px;
+height:3px;
+background-color:violet;
+border-radius:3px;
+transition:all 0.5s;
+}
+
+/* hamburger menu animasi */
+.menu-toggle span:nth-child(2){
+transform-origin: 0 0;
+}
+.menu-toggle span:nth-child(4){
+transform-origin: 0 100%;
+}
+.menu-toggle input:checked ~ span:nth-child(2){
+background-color:red;
+transform:rotate(45deg) translate(-1px, -1px);
+}
+.menu-toggle input:checked ~ span:nth-child(4){
+background-color:red;
+transform:rotate(-45deg) translate(-1px, 0);
+}
+.menu-toggle input:checked ~ span:nth-child(3){
+opacity:0;
+transform:scale(0);
+}
+
+/*rsponsive breakpoint*/
+/* ukuran tablet */
+@media screen and (max-width: 768px){
+nav ul {
+width:50%;
+}
+}
+/* ukuran hp */
+@media screen and (max-width: 576px){
+.menu-toggle{
+display:flex;
+}
+nav ul {
+position:absolute;
+right:0;
+top:0;
+width:28%;
+height:140vh;
+justify-content:space-evenly;
+flex-direction:column;
+align-items:center;
+background-color:black;
+z-index:999;
+transform:translateX(100%);
+transition:all 1s;
+opacity:0;
+}
+
+nav ul.slide{
+transform:translateX(0);
+opacity:1;
+}
+
+}
+
+.wrapper{
+width:100%;
+height:100%;
+background-image:url(gmb/laptop.jpg);
+background-repeat:no-repeat;
+background-size:cover;
+}
+.hero{
+background-color:violet;
+width:400px;
+margin:0 auto;
+position:relative;
+top:200px;
+transform:translate(-50%,-50%);
+overflow:hidden;
+border-radius:15px;
+border:10px solid black;
+box-shadow:10px 25px 30px rgba(0,0,0,0.3); 
+}
+.slider{
+width:100%;
+display:flex;
+animation:slide 16s infinite;
+}
+
+@keyframes  slide{
+0%{
+transform: translateX(0);
+}
+25%{
+transform:translateX(0);
+}
+30%{
+transform:translateX(-100%);
+}
+50%{
+transform:translateX(-100%);
+}
+55%{
+transform:translateX(-200%);
+}
+75%{
+transform:translateX(-200%);
+}
+80%{
+transform:translateX(-300%);
+}
+100%{
+transform:translateX(-300%);
+}
+}
+
+.slider img{
+width:500px;
+height:300px;
+}
+
+.container{
+margin-top:px;
+width:100%;
+height:auto;
+background-color:lightgrey;
+display:flex;
+flex-direction:row;
+justify-content:space-around;
+flex-flow:wrap;
+margin-bottom:0px;
+}
+.kotak{
+width:20%;
+height:300px;
+margin:0px;
+margin-top:10px;
+box-sizing:border-box;
+font-size:50px;
+border-radius:15px;
+box-shadow:0px 2px 5px grey;
+}
+img{
+width:302px;
+height:300px;
+border-radius:15px;
+}
+.caption p{
+background-color:black;
+width:100%;
+height:100%;
+box-sizing:border-box;
+font-size:50px;
+border-radius:15px;
+position:relative;
+bottom:300px;
+color:white;
+font-size:15px;
+padding:10px;
+opacity:0;
+text-shadow:0px 5px 10px black;
+font-weight:bold;
+position:absolut;
+overflow:auto;
+transition:1s;
+}
+
+.caption p:hover{
+opacity:0.8;
+}
+
+.footer{
+background-color:black;
+width:100%;
+height:100px;
+margin-top:200px;
+}
+.footer p{
+text-align:center;
+position:relative;
+top:40px;
+color:white;
+margin-top:10px;
+}
+
+/*responsive*/
+@media screen and (max-width:1200px){
+.kotak {
+  width:30%;
+}
+img{
+   width:100%;
+}
+.caption p{
+   width:100%;
+}
+.hero{
+margin-left:500px;
+}
+}
+@media screen and (max-width:600px){
+.kotak {
+  width:100%;
+}
+img{
+  width:100%;
+}
+.caption p{
+  width:100%;
+}
+.hero{
+margin-left:210px;
+width:250px;
+height:250px;
+}
+.slider img{
+width:250px;
+height:250px;
+}
